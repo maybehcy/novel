@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>错误页面</title>
+</head>
+<body >
+<div style="background-color:#A56565;width:100%;height:100%;position:fixed;top:0;left:0">
+<div style="position:fixed;top:170px;left:51%;transform:translateX(-50%);font-size:30px;text-align:center;z-index:3">
+       <div>{{msg}}</div>
+       <div class="time">还有5秒进行跳转,请稍后</div>
+</div>
+       <div>
+           <img src="/admin/images/error.png" style="height:100%;position:fixed;left:50%;transform:translateX(-50%);z-index:2">
+       </div>	
+</div>
+</body>
+
+	<script type="text/javascript">
+	     var btn=document.querySelector('.time');
+	    // 全局变量，定义剩下的秒数
+        var time = 5; 
+		var timer=setInterval(function () {
+			 if (time == 0) {
+		    clearInterval(timer);
+			//登录错误5s后,跳转到登录界面
+			location.href = '/admin/login';
+			}
+             else{
+				 btn.innerHTML='还有'+time+'秒进行跳转,请稍后';
+				 time--;
+			 }
+		},1000)
+	</script>

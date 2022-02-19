@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>管理操作</title>
+    <link rel="stylesheet" href="/admin/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/css/base.css">
+    <!--要在骨架文件中预留几个坑，因为在某个文件中，
+    他有自己独特的样式css,js....得引入进来,其他模板文件要继承这个坑-->
+    {{block 'link'}}{{/block}}
+</head>
+ 
+<img src="/admin/images/angel.gif" alt="" style="position: absolute;
+            top: 2px; width:96px;height:80px;z-index:999" class="angel" >
+<body>
+   {{block 'main'}}{{/block}}
+   <script src="/admin/lib/jquery/dist/jquery.min.js"></script>
+   <script src="/admin/lib/bootstrap/js/bootstrap.min.js"></script>
+   <script src="/admin/js/angel.js"></script>
+
+   {{block 'script'}}{{/block}}
+</body>
+
+</html>

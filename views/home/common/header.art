@@ -1,0 +1,43 @@
+<!-- 头部框架开始 -->
+<div class="header">
+    <div class="w1100">
+        <!-- 网站logo开始 -->
+      
+        <!-- 网站logo结束 -->
+        <!-- 网站导航开始 -->
+        <ul class="navigation fl">
+            <li style="margin-left:0">
+                <a class="active" href="/home">小说首页</a>
+            </li>
+            {{if userInfo.role!=='normal'}}
+            <li>
+                <a class="item" href="/admin/user">
+			  	<span class="glyphicon "></span>
+			  		管理页面
+			  	</a>
+            </li>
+            {{/if}}
+            <li>
+                <a class="item" href="/admin/novel-class">
+			  	<span class="glyphicon "></span>
+			  	小说类型
+			  	</a>
+            </li>
+            <li><a href="/admin/logout">退出登录</a></li>
+            {{if userInfo.role=='normal'}}
+            <li>
+                <a class="item" href="/admin/normal-detail?username={{userInfo.username}}">
+			  	<span class="glyphicon "></span>
+			  		{{userInfo.username}}的主页
+			  	</a>
+            </li>
+            {{/if}}
+        </ul>
+        <!-- 网站导航结束 -->
+          <form class="form-inline" style="position:absolute;right:0;top:30%" method="post" action="/home/novel-search" >
+                 <input type="text" name="title" placeholder="请输入内容" style="height:25px;width:200px">
+             <button type="submit" style="background-color:#FCB82F;">查询小说</button>
+               </form>
+    </div>
+</div>
+<!-- 头部框架结束 -->

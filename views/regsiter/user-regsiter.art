@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="/regsiter/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/regsiter/css/base.css">
+</head>
+
+<body>
+<img src="/regsiter/images/angel.gif" alt="" style="position: absolute;
+            top: 2px; width:96px;height:80px; z-index:999" class="angel" >
+    <!-- 头部 -->
+    <div class="header">
+        <!-- 网站标志 -->
+        
+            <div class="logo fl">
+                <div>欢迎来到用户注册页面</div>
+        </div>
+        <div ><a href="/admin/logout" class="fr" style="margin:30px;background-color:#FCB82F;border-radius:2px ">返回登录页面</a></div>
+        <!-- /网站标志 -->
+         
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="title">
+                <p class="tips">{{message}}</p>
+            </div>
+            <!-- /分类标题 -->
+            <form class="form-container" action="/regsiter/user-regsiter" method="post">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" name="username" class="form-control" placeholder="请输入用户名">
+                </div>
+                <div class="form-group">
+                    <label>邮箱地址</label>
+                    <input type="email" name="email" class="form-control" placeholder="请输入邮箱地址">
+                </div>
+                <div class="form-group">
+                    <label>用户密码</label>
+                    <input type="password" name="password" class="form-control" placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <label>角色</label>
+                    <select class="form-control" name="role">
+                        <option value="author" >作者</option>
+                          <option value="normal" >普通用户</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>状态</label>
+                    <select class="form-control" name="state">
+                        <option value="0">启用</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <input type="submit" class="btn btn-primary" value="注册">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /主体内容 -->
+    <script src="/regsiter/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/regsiter/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/regsiter/js/angel.js"></script>
+</body>
+
+</html>

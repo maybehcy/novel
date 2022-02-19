@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查询小说页面</title>
+</head>
+<link rel="stylesheet" href="/home/css/style.css">
+<body>
+{{if novels.length!==0}}
+<a href="/home/" class="back"><p >返回首页<p></a>
+    <div class="mod18" style="top:100px">
+        <span id="prev" class="btn prev"></span>
+        <span id="next" class="btn next"></span>
+        <span id="prevTop" class="btn prev"></span>
+        <span id="nextTop" class="btn next"></span>
+       
+        <div id="picBox" class="picBox">
+        
+            <ul class="cf">
+              {{each novels}}
+                <li><a href="/home/novel-detail?id={{@$value._id}}"><img src="{{$value.cover}}" alt="" style="width:100%;height:100%"></a> <span>{{$value.title}}</span> </li>
+            {{/each}}
+            
+            </ul>
+        </div>
+        <div id="listBox" class="listBox">
+            <ul class="cf">
+            {{each novels}}
+                <li ><i class="arr2"></i><img src="{{$value.cover}}" alt="" style="width:100%;height:100%"></li>
+            {{/each}}
+            </ul>
+        </div>
+        <div class="clear"></div>
+        </div>
+        {{else}}
+        <div class="show">
+            <a href="/home/">
+                <h1 style="color:red">没有查询到你要看的小说,点击任意位置返回首页</h1>
+                 <img src="/home/images/cat01.jpg"></a>
+        <div>
+        {{/if}}
+</body>
+<script src="/home/js/jquery-1.11.0.min.js"></script>
+<script src="/home/js/jqueryPhoto.js"></script>
+</html>

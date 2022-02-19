@@ -1,0 +1,74 @@
+<!--继承骨架模板-->
+{{extend './common/layout.art'}}
+
+{{block 'main'}}
+  {{include './common/header.art'}}  
+    <!-- 主体内容 -->
+    <div class="content">
+      
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="title">
+                <h4 style="text-align:center">添加小说页面</h4>
+            </div>
+            <!-- /分类标题 -->
+            <!--
+            1.涉及文件上传，表单数据要以二进制的方式传递到服务器端
+            2.enctype指定表单数据的编码类型
+            3.默认值：application/x-www-form-urlencoded
+            如把数据编码成这样的格式：name=hcy&age=20
+            4.multipart/form-data将表单数据编码成二进制类型
+            -->
+            <form class="form-container" action="/admin/novel-add" 
+            method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label>作者id</label>
+                    <input name="author" type="text" class="form-control" readonly value="{{@userInfo._id}}">
+                </div>
+                
+                <div class="form-group">
+                    <label>小说标题</label>
+                    <input name="title" type="text" class="form-control" placeholder="请输入文章标题">
+                </div>
+                
+                <div class="form-group">
+                    <label>发布时间</label>
+                    <input name="Date" type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>小说的类型</label>
+                   <select class="form-control" name="novel_type">
+					<option value="爱情" >爱情</option>
+					<option value="电竞">电竞</option>
+					<option value="修仙">修仙</option>
+					<option value="悬疑">悬疑</option>
+					<option value="科幻">科幻</option>
+					<option value="校园">校园</option>
+				</select>
+                </div>
+                <div class="form-group">
+                   <label for="exampleInputFile">小说封面</label>
+                   <!--允许用户选择多个文件multiple-->
+                   <input type="file" name="cover" id="file" multiple>
+                  <!-- <div class="thumbnail-waper">
+                      <img class="img-thumbnail" src="" id="preview">
+                    </div>-->
+                </div>
+                <div class="form-group">
+                    <label>小说内容</label>
+                    <textarea name="content" class="form-control" placeholder="请输入文章内容" style="height:250px"></textarea>
+                </div>
+                <div class="buttons">
+                    <input type="submit" class="btn btn-primary">
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <!-- /主体内容 -->
+{{/block}}
+
+
+   
+
+

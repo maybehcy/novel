@@ -1,0 +1,47 @@
+.menu {
+    position: relative;
+    height: 912px;
+    width: 100%;
+    background-color: #FBB217;
+}
+
+.menu .menu-item {
+    position: relative;
+    z-index: 11;
+    float: left;
+    left: 50%;
+    cursor: pointer;
+    transform: translateX(-232px);
+    -webkit-transform: translateX(-232px);
+    -moz-transform: translateX(-232px);
+    -ms-transform: translateX(-232px);
+    -o-transform: translateX(-232px);
+    top: 150px;
+}
+
+.menu .menu-item h6 {
+    margin: 0;
+    padding: 0 1rem 1.5rem;
+    font-size: 1rem;
+    color: #232323;
+    transition: 0.75s;
+}
+
+.menu .menu-item:hover h6 {
+    color: #002b75;
+}
+
+.menu .current-menu-item h6 {
+    color: #002b75;
+}
+
+.dog {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}

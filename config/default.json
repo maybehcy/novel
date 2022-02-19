@@ -1,0 +1,10 @@
+{
+    "title": "小说发布系统",
+    "db": {
+        "user": "hcy",
+        "host": "localhost",
+        "port": "27017",
+        "name": "blog1",
+        "pwd": "123456"
+    }
+}

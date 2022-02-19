@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录页面</title>
+    <!--外链文件是由地址栏解析的，所以要写绝对路径
+    模板文件中的外链文件要写绝对路径，/代表服务器的绝对路径
+    为什么不写public,因为默认会去public文件里找公共文件的。-->
+    <link rel="stylesheet" href="/admin/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/css/base.css">
+</head>
+
+<body>
+     
+   
+     <img src="/admin/images/cat.jpg" style="position:fixed;z-index:80;height:100%;left:50%;transform:translateX(-50%)">
+    <div class="login-body" >
+      
+        <div class="login-container">
+            <h4 class="title">欢迎来到小说发布系统</h4>
+            <div class="login">
+                <form action="/admin/login" method="post" id="loginForm">
+                    <div class="form-group">
+                        <label>email</label>
+                        <input name="email" type="email" class="form-control" placeholder="please input your email" id="email">
+                    </div>
+                    <div class="form-group" class="box">
+                        <label>password</label>
+                        <input name="password" type="password" class="form-control" placeholder="please input your password" id="password">
+                        <img src="/admin/images/close.png" alt="" id="eye">
+                    </div>
+                    <button type="submit" class="btn btn-primary">login</button>
+                    <a href="/regsiter/user-regsiter" class="btn btn-success new">regsiter</a>
+                </form>
+            </div>
+            <div class="tips"></div>
+        </div>
+    </div>
+    <script src="/admin/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/admin/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/admin/js/loginForm.js"></script>
+</body>
+</html>

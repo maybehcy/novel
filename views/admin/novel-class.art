@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小说分类页面</title>
+    <link rel="stylesheet" href="/admin/css/novel-class.css">
+  
+</head>
+
+<body>
+    <img src="/admin/images/dog.png" class="dog">
+    <div class="menu">
+     <div class="menu-item ">
+            <a href="/home/"><h6>全部</h6></a>
+        </div>
+        <div class="menu-item ">
+            <a href="/home/novel-search?novel_type=爱情"><h6>爱情</h6></a>
+        </div>
+        <div class="menu-item">
+            <a href="/home/novel-search?novel_type=电竞"><h6>电竞</h6></a>
+        </div>
+        <div class="menu-item">
+            <a href="/home/novel-search?novel_type=修仙"><h6>修仙</h6></a>
+        </div>
+        <div class="menu-item">
+            <a href="/home/novel-search?novel_type=悬疑"><h6>悬疑</h6></a>
+        </div>
+        <div class="menu-item">
+            <a href="/home/novel-search?novel_type=科幻"><h6>科幻</h6></a>
+        </div>
+        <div class="menu-item">
+            <a href="/home/novel-search?novel_type=校园"><h6>校园</h6></a>
+        </div>
+    </div>
+</body>
+
+
+</html>
+  

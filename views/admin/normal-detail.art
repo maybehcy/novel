@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="/admin/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/css/base.css">
+</head>
+
+<body>
+<div class="header">
+    	<!-- 网站标志 -->
+        <div class="logo fl">
+         用户主页
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+					{{userInfo&&userInfo.username}}
+					<span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu">
+                    <li><a href="/admin/logout"><span class="glyphicon glyphicon-globe">退出登录</a></li>
+                     <li>
+                <!--active用来显示谁被选中-->
+                <li>
+                    <a class="item" href="/home/">
+			  			<span class="glyphicon glyphicon-book"></span>
+			  			小说页面
+			  		</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <div class="content">
+
+        <div class="main">
+            <!-- 分类标题 -->
+           
+
+            <!-- 内容列表 -->
+            <table class="table table-striped table-bordered table-hover custom-table" style="text-align:center">
+                <thead>
+                    <tr>
+                        <th>用户名称</th>
+                        <th>邮箱地址</th>
+                        <th>角色描述</th>
+                        <th>用户状态</th>
+                        <th>操作页面</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{each users}}
+                    <tr>
+                        <!--@符号就是将数据进行原文输出-->
+                        <td>{{$value.username}}</td>
+                        <td>{{$value.email}}</td>
+                        {{if $value.role=='admin'}}
+                        <td>超级管理员</td>
+                        {{/if}} {{if $value.role=='author'}}
+                        <td>作者</td>
+                        {{/if}} {{if $value.role=='normal'}}
+                        <td>普通用户</td>
+                        {{/if}}
+                        <td>{{$value.state==0?'启用':'禁用'}}</td>
+                        <td>
+                            <!--通过get方式把地址栏用户id得到，通过判断地址栏
+                        中有没有id，就可以知道修改操作还是添加操作
+                        -->
+                            <a href="/admin/normal-edit?id={{@$value._id}}" style="margin-right:15px;background-color:#FCB82F;
+                            color:black;">修改用户</a>
+                            <a href="/admin/normal-delete?id={{@$value._id}}" style="margin-right:15px;background-color:#FCB82F;
+                            color:black;">删除用户</a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            </div>
+            </div>
+</body>
+       <script src="/admin/lib/jquery/dist/jquery.min.js"></script>
+        <script src="/admin/lib/bootstrap/js/bootstrap.min.js"></script>
+</html>
